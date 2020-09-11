@@ -1,0 +1,15 @@
+framework:
+  secret: whatever
+  test: ~
+  translator:
+    fallback: en
+
+twig:
+  debug: '%kernel.debug%'
+  strict_variables: '%kernel.debug%'
+  exception_controller: ~
+
+services:
+  twig.test:
+    alias: twig
+    public: true

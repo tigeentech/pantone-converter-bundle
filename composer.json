@@ -1,0 +1,44 @@
+{
+    "name": "matatirosoln/pantone-converter-bundle",
+    "description": "A Symfony bundle to provide twig helpers to convert from a named Pantone coated colour to Hex",
+    "keywords": [
+        "Colors",
+        "PANTONE",
+        "HEX",
+        "RGB",
+        "CMYK"
+    ],
+    "authors": [
+        {
+            "name": "Steve Winter",
+            "email": "steve@msdev.nz"
+        }
+    ],
+    "type": "library",
+    "license": "MIT",
+    "support": {
+        "email": "support@msdev.nz",
+        "issues": "https://github.com/matatirosolutions/pantone-converter-bundle/issues"
+    },
+    "require": {
+        "php": ">=7.2",
+        "matatirosoln/pantone-converter": "^0.0.1",
+        "symfony/config": "~3.4|~4.4|~5.1",
+        "symfony/dependency-injection": "~3.4|~4.4|~5.1",
+        "symfony/twig-bundle": "~3.4|~4.4|~5.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3",
+        "symfony/phpunit-bridge": "~5.1",
+        "symfony/symfony": "~3.4|~4.4|~5.1"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "MSDev\\PantoneConverterBundle\\Tests\\": "tests/",
+            "MSDev\\PantoneConverterBundle\\": "src/"
+        }
+    }
+}
