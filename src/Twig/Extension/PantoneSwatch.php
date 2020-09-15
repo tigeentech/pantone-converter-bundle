@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MSdev\PantoneConverterBundle\Twig\Extension;
+namespace MSDev\PantoneConverterBundle\Twig\Extension;
 
 use MSDev\PantoneConverter\Exception\ColourNotFound;
 use MSDev\PantoneConverter\PantoneConverter;
