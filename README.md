@@ -49,16 +49,6 @@ You'll then want to apply styling to the `pantone-swatch` class to display at an
 }
 ```
 
-### Adding content
-You can also pass an optional second parameter which will be embedded into the span (this can include HTML), e.g. 
-````
-{{ pantone_swatch('100 C', 'This is yellow') }} 
-````
-will render the following HTML
-```html
-<span class="pantone-swatch" style="background-color:#F6EB61;">This is yellow</span>
-```
-
 ### Error case
 If you request a non-existent colour, the swatch will render with a white background, e.g. 
 ````
@@ -68,6 +58,58 @@ will render the following HTML
 ```html
 <span class="pantone-swatch" style="background-color:#FFFFFF;">This colour is missing</span>
 ```
+
+
+### Options
+You can also pass an optional object as the second parameter with three possible values.
+
+#### Content
+Add content to the span (this can include HTML), e.g. 
+````
+{{ pantone_swatch('100 C', {'content': 'This is yellow'}) }} 
+````
+will render the following HTML
+```html
+<span class="pantone-swatch" style="background-color:#F6EB61;">This is yellow</span>
+```
+
+#### Border
+Add a border of the specified colour to the swatch. This can be either an HTML named colour, or a hex colour, e.g.
+````
+{{ pantone_swatch('100 C', {'border': '#FF0000'}) }} 
+````
+will render the following HTML
+```html
+<span class="pantone-swatch" style="background-color:#F6EB61;border-color:#FF0000"></span>
+```
+You'll need to set the other border parameters in your css, e.g.
+```css
+.pantone-swatch {
+    /*...*/
+    border-width: 1px;
+    border-style: solid;
+}
+```
+
+#### Border when white
+Add a border of the specified colour to the swatch but only if it is white. This may happen if the swatch is deliberately set to be white, or when an invalid colour is passed. This can be either an HTML named colour, or a hex colour, e.g.
+````
+{{ pantone_swatch('100 C', {'borderWhite': '#FF0000'}) }} 
+````
+will render the following HTML
+```html
+<span class="pantone-swatch" style="background-color:#F6EB61;"></span>
+```
+because `100 C` is a valid colour, while
+ ````
+ {{ pantone_swatch('Unknown Colour', {'borderWhite': '#FF0000'}) }} 
+ ````
+ will render the following HTML
+ ```html
+ <span class="pantone-swatch" style="background-color:#F6EB61;border-color:#FF0000"></span>
+ ```
+As for a standard border you'll also need to set the other border parameters in your css.
+
 
 ## License
 Copyright &copy; 2020, Matatiro Solutions. Licensed under the [MIT License](LICENSE.md).

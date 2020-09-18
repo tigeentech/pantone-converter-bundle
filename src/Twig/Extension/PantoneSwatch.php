@@ -22,7 +22,7 @@ class PantoneSwatch extends AbstractExtension
         ];
     }
 
-    public function pantoneSwatch(Environment $environment, string $colourName, ?string $content = null): string
+    public function pantoneSwatch(Environment $environment, string $colourName, ?array $options = []): string
     {
         try {
             $colour = PantoneConverter::ColourFromName($colourName);
@@ -31,10 +31,17 @@ class PantoneSwatch extends AbstractExtension
             $hex = 'FFFFFF';
         }
 
+        $content = $options['content'] ?? '';
+        $border = $options['border'] ?? false;
+        if(isset($options['borderWhite']) && 'FFFFFF' === $hex) {
+            $border = $options['borderWhite'];
+        }
+
         return $environment->render(
             '@PantoneConverter/swatch.html.twig', [
             'colour' => $hex,
-            'content' => $content
+            'content' => $content,
+            'border' => $border
         ]);
     }
 }
