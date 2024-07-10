@@ -1,5 +1,5 @@
 {
-    "name": "matatirosoln/pantone-converter-bundle",
+    "name": "tigeentech/pantone-converter-bundle",
     "description": "A Symfony bundle to provide twig helpers to convert from a named Pantone coated colour to Hex",
     "keywords": [
         "Colors",
