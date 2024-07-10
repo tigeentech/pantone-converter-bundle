@@ -10,15 +10,15 @@
     ],
     "authors": [
         {
-            "name": "Steve Winter",
-            "email": "steve@msdev.nz"
+            "name": "Hafeel Nasir",
+            "email": "hafeel@tigeen.ch"
         }
     ],
     "type": "library",
     "license": "MIT",
     "support": {
-        "email": "support@msdev.nz",
-        "issues": "https://github.com/matatirosolutions/pantone-converter-bundle/issues"
+        "email": "support@tigeen.ch",
+        "issues": "https://github.com/tigeentech/pantone-converter-bundle/issues"
     },
     "require": {
         "php": ">=7.2",
@@ -29,8 +29,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^9.3",
-        "symfony/phpunit-bridge": "~5.1",
-        "symfony/symfony": "~3.4|~4.4|~5.1"
+        "symfony/phpunit-bridge": "~5.1|~6.4",
+        "symfony/symfony": "~3.4|~4.4|~5.1|~6.4"
     },
     "config": {
         "sort-packages": true
